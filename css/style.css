@@ -1,0 +1,274 @@
+/* 全局重置：清除默认边距和内边距 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 保证宽高包含padding和border */
+    font-family: "微软雅黑", "Arial", sans-serif; /* 统一字体 */
+}
+
+/* 页面背景色 */
+body {
+    background-color: #f8f9fa;
+    color: #333; /* 默认文字颜色 */
+}
+
+/* 顶部导航栏样式 */
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: #218838; /* 绿色主色调，协调美观 */
+    position: fixed; /* 导航栏固定在顶部 */
+    top: 0;
+    left: 0;
+    z-index: 999; /* 避免被其他元素遮挡 */
+}
+
+.nav {
+    width: 1200px; /* 固定导航栏宽度，居中显示 */
+    margin: 0 auto;
+    height: 100%;
+}
+
+.nav a {
+    float: left; /* 导航项横向排列 */
+    color: white; /* 文字白色 */
+    text-decoration: none; /* 去除下划线 */
+    width: 20%; /* 5个导航项，各占20%宽度 */
+    text-align: center;
+    line-height: 60px; /* 垂直居中 */
+    font-size: 18px;
+    transition: background-color 0.3s; /* hover过渡效果 */
+}
+
+/* 导航项hover和激活状态 */
+.nav a:hover, .nav a.active {
+    background-color: #19692c;
+}
+
+/* 主体容器：避开固定导航栏，设置间距 */
+.container {
+    width: 1200px;
+    margin: 80px auto 30px; /* 上80px（避开导航栏）、左右自动、下30px */
+    overflow: hidden; /* 清除浮动 */
+}
+
+/* 左侧侧边栏 */
+.sidebar {
+    width: 300px;
+    float: left;
+    background-color: white;
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 轻微阴影，增加层次感 */
+    padding: 25px;
+}
+
+/* 个人照片样式 */
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* 圆形照片 */
+    border: 5px solid #218838;
+    margin: 0 auto 20px; /* 居中显示 */
+    display: block; /* 图片转为块级元素，才能margin auto */
+}
+
+.sidebar h3 {
+    text-align: center;
+    font-size: 22px;
+    color: #218838;
+    margin-bottom: 10px;
+}
+
+.sidebar p {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* 中间内容区 */
+.content {
+    width: 850px;
+    float: right;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 30px;
+}
+
+.content h2 {
+    font-size: 24px;
+    color: #218838;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.content p {
+    font-size: 17px;
+    line-height: 1.8; /* 行高，提高可读性 */
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* 动态卡片样式 */
+.dynamic-card {
+    width: 100%;
+    height: 80px;
+    background-color: #218838;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer; /* 鼠标悬浮变指针，提示可点击 */
+    transition: all 0.3s; /* 过渡效果，避免生硬 */
+}
+
+/* 底部版权栏 */
+.footer {
+    width: 100%;
+    height: 50px;
+    background-color: #218838;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    position: fixed; /* 固定在底部 */
+    bottom: 0;
+    left: 0;
+}
+/* 日志文章样式 */
+.blog-post {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e9ecef; /* 虚线分隔线 */
+}
+
+.blog-post:last-child {
+    border-bottom: none; /* 最后一篇日志去掉分隔线 */
+}
+
+.blog-post h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.blog-date {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 15px;
+}
+/* 相册容器：网格布局 */
+.album-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列等宽 */
+    gap: 20px; /* 图片间距 */
+}
+
+/* 相册-item样式 */
+.album-item {
+    text-align: center;
+}
+
+.album-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* 保持图片比例，填充容器 */
+    border-radius: 8px;
+    transition: transform 0.3s; /* hover放大效果 */
+}
+
+.album-item img:hover {
+    transform: scale(1.05); /* 放大5% */
+}
+
+.album-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+}
+/* 爱好容器：Flex布局，自动换行 */
+.hobby-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* 爱好-item样式 */
+.hobby-item {
+    width: calc(50% - 15px); /* 2列布局，减去gap间距 */
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.hobby-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 15px;
+}
+
+.hobby-item h3 {
+    font-size: 19px;
+    color: #218838;
+    margin-bottom: 10px;
+}
+
+.hobby-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+/* 联系表单样式 */
+.contact-form {
+    margin-top: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #218838;
+    box-shadow: 0 0 0 3px rgba(33, 136, 56, 0.1);
+}
+
+.submit-btn {
+    background-color: #218838;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 17px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #19692c;
+}
+
+/* 提示信息样式 */
+.tip {
+    margin-top: 15px;
+    font-size: 16px;
+    height: 20px;
+}

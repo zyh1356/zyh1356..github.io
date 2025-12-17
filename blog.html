@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的日志 - 张永恒的个人主页</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏、侧边栏、底部版权栏与首页完全一致，直接复制 -->
+    <div class="header">
+        <nav class="nav">
+            <a href="index.html">首页</a>
+            <a href="blog.html" class="active">我的日志</a>
+            <a href="album.html">我的相册</a>
+            <a href="hobby.html">我的爱好</a>
+            <a href="contact.html">与我联系</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <img src="images/me.jpg" alt="个人照片" class="avatar">
+            <h3>张永恒</h3>
+            <p>东北石油大学计算机科学与技术专业</p>
+            <p>Java开发爱好者 | 喜欢探索新技术</p>
+        </div>
+
+        <!-- 日志内容区：用article标签包裹单篇日志 -->
+        <div class="content">
+            <h2>我的学习与生活日志</h2>
+            
+            <!-- 日志1 -->
+            <article class="blog-post">
+                <h3>2024年5月10日 - 学习JDBC数据库连接</h3>
+                <p class="blog-date">发布时间：2024-05-10 19:30</p>
+                <p>今天跟着老师学习了JDBC，终于搞懂了数据库连接的底层原理！原来需要加载驱动、建立连接、创建Statement、执行SQL、处理结果集，最后还要关闭资源。虽然步骤多，但每一步都很关键，尤其是资源关闭，不小心就会导致内存泄漏。晚上自己写了一个查询学生信息的小例子，成功从MySQL中获取到数据，太有成就感了！</p>
+            </article>
+
+            <!-- 日志2 -->
+            <article class="blog-post">
+                <h3>2024年5月15日 - 前端布局踩坑记</h3>
+                <p class="blog-date">发布时间：2024-05-15 20:10</p>
+                <p>今天做个人主页的相册页面，遇到了布局错乱的问题。一开始用float布局，图片总是不能整齐排列，后来查资料发现是没有清除浮动。解决方法很简单：给父容器加overflow: hidden，或者用伪元素清除浮动。另外，图片大小不一致也导致布局难看，用PS统一调整为300×200像素后，页面瞬间整齐了。看来前端开发不仅要懂代码，还要注重细节处理。</p>
+            </article>
+
+            <!-- 日志3 -->
+            <article class="blog-post">
+                <h3>2024年5月20日 - 团队项目启动</h3>
+                <p class="blog-date">发布时间：2024-05-20 18:40</p>
+                <p>今天和班里的3个同学组成了团队，准备开始J2EE团队合作测试。我们的项目是“学生基本信息检索系统”，我负责后端开发，主要实现数据的增删改查。第一次团队合作，我们先划分了任务，制定了开发计划，约定每周六下午开会讨论进度。希望通过这个项目，不仅能巩固所学知识，还能提升团队协作能力！</p>
+            </article>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>©  张永恒的个人主页 - 东北石油大学J2EE实验作品</p>
+    </div>
+</body>
+</html>

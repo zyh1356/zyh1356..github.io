@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <!-- 引入外部CSS（必须用外部样式表，符合实验要求） -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div class="header">
+        <nav class="nav">
+            <a href="index.html" class="active">首页</a>
+            <a href="blog.html">我的日志</a>
+            <a href="album.html">我的相册</a>
+            <a href="hobby.html">我的爱好</a>
+            <a href="contact.html">与我联系</a>
+        </nav>
+    </div>
+
+    <!-- 主体容器 -->
+    <div class="container">
+        <!-- 左侧侧边栏 -->
+        <div class="sidebar">
+            <img src="images/me.jpg" alt="个人照片" class="avatar">
+            <h3>张永恒</h3>
+            <p>东北石油大学计算机科学与技术专业</p>
+            <p>Java开发爱好者 | 喜欢探索新技术</p>
+        </div>
+
+        <!-- 中间内容区 -->
+        <div class="content">
+            <h2>欢迎来到我的个人主页</h2>
+            <p>大家好！我是张永恒，目前就读于东北石油大学计算机科学与技术专业，主攻J2EE方向。这个主页记录了我的学习历程、兴趣爱好和生活点滴，希望通过它能让你更了解我～</p>
+            <!-- JavaScript动态效果触发元素 -->
+            <div class="dynamic-card" id="dynamic-card">点击查看我的最新动态</div>
+        </div>
+    </div>
+
+    <!-- 底部版权栏 -->
+    <div class="footer">
+        <p>©  张永恒的个人主页 - 东北石油大学J2EE实验作品</p>
+    </div>
+
+    <!-- 引入JavaScript脚本 -->
+    <script src="js/dynamic.js"></script>
+</body>
+</html>

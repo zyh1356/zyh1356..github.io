@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>与我联系 - 张永恒的个人主页</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <nav class="nav">
+            <a href="index.html">首页</a>
+            <a href="blog.html">我的日志</a>
+            <a href="album.html">我的相册</a>
+            <a href="hobby.html">我的爱好</a>
+            <a href="contact.html" class="active">与我联系</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <img src="images/me.jpg" alt="个人照片" class="avatar">
+            <h3>张永恒</h3>
+            <p>东北石油大学计算机科学与技术专业</p>
+            <p>Java开发爱好者 | 喜欢探索新技术</p>
+        </div>
+
+        <!-- 联系表单区 -->
+        <div class="content">
+            <h2>与我联系</h2>
+            <p>如果你有任何问题或想和我交流，欢迎通过以下表单留言，我会尽快回复你！</p>
+            <form class="contact-form" id="contact-form" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="name">你的姓名：</label>
+                    <input type="text" id="name" name="name" placeholder="请输入你的姓名">
+                </div>
+                <div class="form-group">
+                    <label for="email">你的邮箱：</label>
+                    <input type="email" id="email" name="email" placeholder="请输入你的邮箱">
+                </div>
+                <div class="form-group">
+                    <label for="message">留言内容：</label>
+                    <textarea id="message" name="message" rows="5" placeholder="请输入留言内容"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">提交留言</button>
+            </form>
+            <!-- 验证提示信息 -->
+            <div id="tip" class="tip"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>©  张永恒的个人主页 - 东北石油大学J2EE实验作品</p>
+    </div>
+
+    <!-- 引入表单验证脚本（可单独写，也可直接写在页面中） -->
+    <script>
+        // 表单验证函数
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const tip = document.getElementById('tip');
+
+            // 验证姓名不为空
+            if (name.trim() === '') {
+                tip.style.color = 'red';
+                tip.innerHTML = '请输入你的姓名！';
+                return false; // 阻止表单提交
+            }
+
+            // 验证邮箱格式（简单正则）
+            const emailReg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!emailReg.test(email)) {
+                tip.style.color = 'red';
+                tip.innerHTML = '请输入有效的邮箱地址！';
+                return false;
+            }
+
+            // 验证留言不为空且长度不少于10字
+            if (message.trim() === '' || message.length < 10) {
+                tip.style.color = 'red';
+                tip.innerHTML = '留言内容不能为空且长度不少于10字！';
+                return false;
+            }
+
+            // 验证通过
+            tip.style.color = 'green';
+            tip.innerHTML = '留言提交成功！感谢你的留言，我会尽快回复你～';
+            return false; // 仅做前端验证，不实际提交到后端
+        }
+    </script>
+</body>
+</html>
